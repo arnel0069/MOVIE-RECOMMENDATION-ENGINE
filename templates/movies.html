@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <title>Movies</title>
+</head>
+
+<body>
+  <header>
+    <h2><a href="{{url_for('movies')}}">Movie Recommendation</a></h2>
+    <div class="rh">
+      <a href="{{url_for('home')}}">Home</a>
+      <a href="{{url_for('about')}}">About</a>
+      <a href="#Project-synopsis">Project synopsis</a>
+    </div>
+  </header>
+
+  <main>
+    <form action="/recommend" method="post">
+      <label for="movie_name">Enter the movie name:</label>
+      <input type="text" required placeholder="Movies..." name="movie_name" value="{{ movie_name|default('') }}">
+      <button>Search</button>
+    </form>
+
+    {% if movie_name %}
+    <h2>Recommendation movies for {{ movie_name }}:</h2><br>
+      {% for recommendation in recommendations %}
+        <a href="https://www.google.com/search?q={{ recommendation.title }}+movie" target="_blank">{{ recommendation.title }}</a>
+      {% endfor %}
+    {% endif %}
+
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+
+  </main>
+  <footer>
+    <p>&#169; All rights reserved</p>
+  </footer>
+
+</body>
+
+</html>

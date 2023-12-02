@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <title>Register</title>
+</head>
+
+<body>
+  <header>
+    <h2> <a href="{{url_for('movies')}}">Movie Recommendation</a></h2>
+    <div class="rh">
+      <a href="{{url_for('home')}}">Home</a>
+      <a href="{{url_for('about')}}">About</a>
+      <a href="#Project synopsis">Project synopsis
+</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Please Register</h1>
+
+      <form action="/register" method="post" onsubmit="return validateForm()">
+
+        <div class="form-control">
+          <input type="text" required name="username">
+          <label>username</label>
+        </div>
+
+        <div class="form-control">
+          <input type="password" required name="password" id="password">
+          <label>Password</label>
+        </div>
+
+        <div class="form-control">
+          <input type="password" required name="confirm_password" id="confirm_password" required>
+          <label>Confirm Password</label>
+          <p id="password_match_error" style="color: black; display: none;">Passwords don't match.</p>
+        </div>
+
+        <button class="btn">Register</button>
+
+        <p class="text">Already have an account? <a href="{{url_for('login')}}">Login</a></p>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p> &#169;	all rights reserverd</p>
+  </footer>
+
+<script>
+const labels = document.querySelectorAll('.form-control label')
+
+labels.forEach(label => {
+    label.innerHTML = label.innerText
+        .split('')
+        .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
+        .join('')
+});
+
+  function validateForm() {
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirm_password").value;
+
+      if (password !== confirmPassword) {
+          document.getElementById("password_match_error").style.display = "block";
+          return false;
+      } else {
+          document.getElementById("password_match_error").style.display = "none";
+          return true;
+      }
+  }
+</script>
+</body>
+</html>

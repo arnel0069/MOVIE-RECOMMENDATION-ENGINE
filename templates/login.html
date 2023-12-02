@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <title>Login</title>
+</head>
+
+<body>
+  <header>
+    <h2> <a href="#movies">Movie Recommendation</a></h2>
+    <div class="rh">
+      <a href="{{url_for('home')}}">Home</a>
+      <a href="{{url_for('about')}}">About</a>
+      <a href="#Project synopsis">Project synopsis</a>
+    </div>
+  </header>
+
+  <main>
+         <div class="container">
+      <h1>Please Login</h1>
+      <form action="/login" method="post">
+        <div class="form-control">
+          <input type="text" required name="username">
+          <label>username</label>
+        </div>
+
+        <div class="form-control">
+          <input type="password" required name="password">
+          <label>Password</label>
+        </div>
+
+        <button class="btn">Login</button>
+
+        <p class="text">don't have an account? <a href="{{url_for('register')}}">Register</a> </p>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p> &#169;	all rights reserverd</p>
+  </footer>
+
+</body>
+<script>const labels = document.querySelectorAll('.form-control label')
+
+labels.forEach(label => {
+    label.innerHTML = label.innerText
+        .split('')
+        .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
+        .join('')
+})</script>
+</body>
+</html>

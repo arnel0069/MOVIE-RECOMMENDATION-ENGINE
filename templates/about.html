@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <title>About</title>
+</head>
+
+<body>
+  <header>
+    <h2> <a href="{{url_for('movies')}}">Movie Recommendation</a></h2>
+    <div class="rh">
+      <a href="{{url_for('home')}}">Home</a>
+      <a href="{{url_for('about')}}">About</a>
+      <a href="#Project synopsis
+">Project synopsis
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <h2>about us</h2><br>
+    <p>
+      Welcome to Movie Recommendation, your go-to source for discovering new and exciting movies.
+      We are passionate about helping you find the perfect movie for your entertainment.
+    </p><br><br>
+    <p>
+      Our team of experts curates personalized movie recommendations based on your preferences.
+      Whether you're into action, drama, comedy, or anything in between, we've got you covered.
+    </p>
+
+  </main>
+  <footer>
+    <p> &#169; all rights reserverd</p>
+  </footer>
+
+</body>
+
+</html>
