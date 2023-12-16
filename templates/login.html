@@ -19,7 +19,7 @@
   </header>
 
   <main>
-         <div class="container">
+    <div class="container">
       <h1>Please Login</h1>
       <form action="/login" method="post">
         <div class="form-control">
@@ -34,22 +34,27 @@
 
         <button class="btn">Login</button>
 
+        {% if error %}
+        <p class="error-message">{{ error }}</p>
+        {% endif %}
+
         <p class="text">Don't have an account? <a href="{{url_for('register')}}">Register</a> </p>
       </form>
     </div>
   </main>
   <footer>
-    <p> &#169;	All Rights Reserverd</p>
+    <p> &#169; All Rights Reserverd</p>
   </footer>
 
 </body>
 <script>const labels = document.querySelectorAll('.form-control label')
 
-labels.forEach(label => {
+  labels.forEach(label => {
     label.innerHTML = label.innerText
-        .split('')
-        .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
-        .join('')
-})</script>
+      .split('')
+      .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
+      .join('')
+  })</script>
 </body>
+
 </html>

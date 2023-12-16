@@ -32,9 +32,12 @@ def register():
         password = request.form['password']
 
         # Check if the username already exists
+
+
+        # Check if the username already exists
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
-            return render_template('register.html', error='Username already exists. Please choose a different one.')
+            return render_template('register.html', error='User Already Exists')
 
         hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
 
@@ -59,7 +62,7 @@ def login():
         if user and check_password_hash(user.password, password):
             return redirect(url_for('movies'))
         else:
-            return 'Login failed. Check your username and password.'
+            return render_template('login.html',error="Check your username and password")
 
     return render_template('login.html')
 
