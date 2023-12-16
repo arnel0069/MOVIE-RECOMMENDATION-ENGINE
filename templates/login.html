@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
   <header>
     <h2> <a href="{{url_for('movies')}}">Movie Recommendation</a></h2>
     <div class="rh">
@@ -19,6 +20,7 @@
   </header>
 
   <main>
+
     <div class="container">
       <h1>Please Login</h1>
       <form action="/login" method="post">
@@ -41,7 +43,9 @@
         <p class="text">Don't have an account? <a href="{{url_for('register')}}">Register</a> </p>
       </form>
     </div>
+
   </main>
+
   <footer>
 
     <p> &#169; All Rights Reserver 2024 <br>
@@ -51,6 +55,7 @@
 
   </footer>
 </body>
+
 <script>const labels = document.querySelectorAll('.form-control label')
 
   labels.forEach(label => {
@@ -59,6 +64,7 @@
       .map((letter, idx) => `<span style="transition-delay:${idx * 50}ms">${letter}</span>`)
       .join('')
   })</script>
+  
 </body>
 
 </html>

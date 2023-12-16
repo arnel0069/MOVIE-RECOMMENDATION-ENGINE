@@ -8,9 +8,11 @@
 
   <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
   <title>Home</title>
+
 </head>
 
 <body>
+
   <header>
     <h2> <a href="{{url_for('movies')}}">Movie Recommendation</a></h2>
     <div class="rh">
@@ -23,10 +25,10 @@
   <main>
     <h2>
       <p>Welcome To The Project To Continue Please Register Yourself:</p><br>
-      <center><a href="{{url_for('register')}}">Register</a>
+      <a href="{{url_for('register')}}">Register</a>
     </h2>
-    </center>
   </main>
+
   <footer>
 
     <p> &#169; All Rights Reserver 2024 <br>
@@ -37,5 +39,4 @@
   </footer>
 
 </body>
-
 </html>
