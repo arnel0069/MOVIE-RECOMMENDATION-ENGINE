@@ -81,10 +81,16 @@ def recommend():
             return render_template('movies.html', error_message="Sorry, no close match found for the entered movie.")
 
         return render_template('movies.html', movie_name=movie_name, recommendations=recommendations)
-    
+
+        return render_template('movies.html') 
+        
 @app.route('/about')
 def about():
     return render_template('about.html')
+    
+@app.route('/projectsynopsis')
+def projectsynopsis():
+    return render_template('projectsynopsis.html')
 
 
 if __name__ == '__main__':

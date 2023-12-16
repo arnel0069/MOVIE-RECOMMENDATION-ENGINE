@@ -4,12 +4,12 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 movies_data = pd.read_csv("movies.csv")
-selected_features = ['genres', 'cast', 'director']
+selected_features = ['genres', 'cast', 'director', 'homepage']
 
 for feature in selected_features:
     movies_data[feature] = movies_data[feature].fillna('')
 
-combined_features = movies_data['genres'] + ' ' + movies_data['cast'] + ' ' + movies_data['director']
+combined_features = movies_data['genres'] + ' ' + movies_data['cast'] + ' ' + movies_data['director'] + ' ' + movies_data['homepage']
 
 vectorizer = TfidfVectorizer()
 feature_vectors = vectorizer.fit_transform(combined_features)
@@ -30,7 +30,11 @@ def get_movie_recommendations(movie_name):
     recommendations = []
     for i, (index, score) in enumerate(sorted_similar_movies, start=1):
         title_from_index = movies_data.loc[index, 'title']
-        recommendations.append({"title": title_from_index, "similarity_score": score})
+        homepage_from_index = movies_data.loc[index, 'homepage']
+        recommendations.append({
+            "title": title_from_index,
+            "similarity_score": score,
+            "homepage": homepage_from_index
+        })
 
     return recommendations
-

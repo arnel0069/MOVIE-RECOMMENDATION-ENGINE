@@ -10,11 +10,11 @@
 
 <body>
   <header>
-    <h2> <a href="#movies">Movie Recommendation</a></h2>
+    <h2> <a href="{{url_for('movies')}}">Movie Recommendation</a></h2>
     <div class="rh">
       <a href="{{url_for('home')}}">Home</a>
       <a href="{{url_for('about')}}">About</a>
-      <a href="#Project synopsis">Project synopsis</a>
+      <a href="{{url_for('projectsynopsis')}}">Project synopsis</a>
     </div>
   </header>
 
@@ -24,7 +24,7 @@
       <form action="/login" method="post">
         <div class="form-control">
           <input type="text" required name="username">
-          <label>username</label>
+          <label>Username</label>
         </div>
 
         <div class="form-control">
@@ -34,12 +34,12 @@
 
         <button class="btn">Login</button>
 
-        <p class="text">don't have an account? <a href="{{url_for('register')}}">Register</a> </p>
+        <p class="text">Don't have an account? <a href="{{url_for('register')}}">Register</a> </p>
       </form>
     </div>
   </main>
   <footer>
-    <p> &#169;	all rights reserverd</p>
+    <p> &#169;	All Rights Reserverd</p>
   </footer>
 
 </body>
