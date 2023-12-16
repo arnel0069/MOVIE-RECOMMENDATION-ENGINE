@@ -37,7 +37,8 @@ footer{
   height: 10vh;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 20px;
   width: 100%;
   display: flex;
+  text-align: center;
 }
