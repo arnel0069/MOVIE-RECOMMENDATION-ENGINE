@@ -2,3 +2,4 @@ Flask
 Gunicorn
 pandas
 scikit-learn
+flask_sqlalchemy
