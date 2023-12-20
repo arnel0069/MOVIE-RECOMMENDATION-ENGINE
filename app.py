@@ -32,9 +32,6 @@ def register():
         password = request.form['password']
 
         # Check if the username already exists
-
-
-        # Check if the username already exists
         existing_user = User.query.filter_by(username=username).first()
         if existing_user:
             return render_template('register.html', error='User Already Exists')

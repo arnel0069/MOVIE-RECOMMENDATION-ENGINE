@@ -42,3 +42,7 @@ footer{
   display: flex;
   text-align: center;
 }
+
+footer a {
+  padding: 0px 1px 0px 2px;
+}
