@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for , send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from model import get_movie_recommendations
@@ -93,3 +93,10 @@ def projectsynopsis():
     return render_template('projectsynopsis.html')
 
 
+@app.route('/index')
+def index():
+    return render_template('index.html')
+
+@app.route('/video/<filename>')
+def video(filename):
+    return send_from_directory('static/videos', filename)

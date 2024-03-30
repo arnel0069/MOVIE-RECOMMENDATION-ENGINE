@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        video {
+            width: 100vw;
+            height: 90vh;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Player</h1>
+    <video controls>
+        <source src="{{ url_for('video', filename='Samplevideo.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html>

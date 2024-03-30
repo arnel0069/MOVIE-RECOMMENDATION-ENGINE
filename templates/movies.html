@@ -38,8 +38,8 @@
     {% if movie_name %}
     <h2>Recommendation movies for {{ movie_name }}:</h2><br>
     {% for recommendation in recommendations %}
-    <a href="https://www.google.com/search?q={{ recommendation.title }}+movie" target="_blank">{{ recommendation.title
-      }}</a>
+    <a href="{{url_for('index')}}">{{ recommendation.title
+    }}</a>
     {% endfor %}
     {% endif %}
 
