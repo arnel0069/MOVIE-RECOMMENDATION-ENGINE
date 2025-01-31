@@ -1,6 +1,8 @@
+/* Base Styles (Desktop) */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -15,35 +17,81 @@ header {
   align-items: center;
   font-size: 25px;
   width: 100%;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  padding: 0px 15px;
+  color: black;
 }
 
 a:hover {
   color: white;
 }
 
-a {
-  text-decoration: none;
-  padding: 0px 15px 0px 20px;
-  color: black;
-}
-
-main{
+main {
   font-size: 20px;
   height: 80vh;
-  margin: 20px 30px 0px 30px ;
+  margin: 20px 30px;
 }
 
-footer{
+footer {
   background-color: #5E7CE2;
   height: 10vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
   width: 100%;
-  display: flex;
   text-align: center;
 }
 
 footer a {
-  padding: 0px 1px 0px 2px;
+  padding: 0px 1px;
+}
+
+/* Tablet Styles (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  header {
+    font-size: 22px;
+    padding: 0 15px;
+  }
+
+  main {
+    font-size: 18px;
+    margin: 15px 20px;
+  }
+
+  footer {
+    font-size: 18px;
+  }
+}
+
+/* Mobile Styles (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  header {
+    font-size: 18px;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  a {
+    padding: 5px;
+    display: block;
+  }
+
+  main {
+    font-size: 16px;
+    margin: 10px;
+    height: auto;
+  }
+
+  footer {
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+  }
 }

@@ -1,6 +1,8 @@
+/* Base Styles (Desktop) */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -15,19 +17,20 @@ header {
   align-items: center;
   font-size: 25px;
   width: 100%;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  padding: 0px 15px;
+  color: black;
 }
 
 a:hover {
   color: white;
 }
 
-a {
-  text-decoration: none;
-  padding: 0px 15px 0px 20px;
-  color: black;
-}
-
-main{
+main {
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -35,25 +38,28 @@ main{
   justify-content: center;
   text-align: center;
   font-size: 25px;
+  padding: 20px;
 }
 
-footer{
+footer {
   background-color: #5E7CE2;
   height: 10vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
   width: 100%;
-  display: flex;
   text-align: center;
+  padding: 10px;
 }
-
 
 .container {
   background-color: rgba(0, 0, 0, 0.228);
-  padding: 20px 20px;
-  margin: 80px 0px 10px;
+  padding: 20px;
+  margin: 80px 0 10px;
   border-radius: 5px;
+  width: 400px;
+  max-width: 90%;
 }
 
 .container h1 {
@@ -66,27 +72,29 @@ footer{
   color: black;
   font-size: 25px;
 }
-.container a:hover{
+
+.container a:hover {
   color: white;
 }
 
-.btn {
+.btn, button {
   cursor: pointer;
   display: inline-block;
   width: 100%;
   background: rgba(0, 0, 0, 0.101);
   padding: 15px;
   font-family: inherit;
-  font-size: 25px;
+  font-size: 20px;
   border: 0;
   border-radius: 5px;
+  margin: 5px;
 }
 
-.btn:focus {
+.btn:focus, button:focus {
   outline: 0;
 }
 
-.btn:active {
+.btn:active, button:active {
   transform: scale(0.98);
 }
 
@@ -96,15 +104,16 @@ footer{
 
 .form-control {
   position: relative;
-  margin: 20px 0 20px;
-  width: 300px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 300px;
 }
 
 .form-control input {
   background-color: transparent;
   border: 0;
   border-bottom: 2px black solid;
-  width: 125%;
+  width: 100%;
   padding: 15px 0;
   font-size: 18px;
   color: black;
@@ -135,40 +144,101 @@ footer{
   transform: translateY(-30px);
 }
 
-button{
-  cursor: pointer;
-  background:rgba(0, 0, 0, 0.101);
+input {
   padding: 15px;
-  font-family: inherit;
-  font-size: 25px;
-  border: 0;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-button:focus {
-  outline: 0;
-}
-
-button:active {
-  transform: scale(0.98);
-}
-
-
-input{
-  padding: 15px;
-  font-size: 25px;
-  background-color:rgba(0, 0, 0, 0.101) ;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.101);
   border: 0;
   border-radius: 5px;
   outline: 0;
+  width: 100%;
 }
 
-label{
-  font-size: 25px;
+label {
+  font-size: 20px;
   font-weight: bold;
 }
 
 footer a {
-  padding: 0px 1px 0px 2px;
+  padding: 0px 1px;
+}
+
+/* Responsive for Tablet (≤1024px) */
+@media screen and (max-width: 1024px) {
+  header {
+    font-size: 22px;
+    padding: 0 15px;
+  }
+
+  main {
+    font-size: 22px;
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 18px;
+    height: auto;
+    padding: 15px;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 500px;
+    padding: 15px;
+  }
+
+  .form-control {
+    width: 90%;
+  }
+
+  input {
+    font-size: 18px;
+  }
+}
+
+/* Responsive for Mobile (≤768px) */
+@media screen and (max-width: 768px) {
+  header {
+    font-size: 18px;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  a {
+    padding: 10px;
+    display: block;
+  }
+
+  main {
+    font-size: 18px;
+    padding: 10px;
+    height: auto;
+  }
+
+  footer {
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+    margin-top: 40px;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .btn, button {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  input {
+    font-size: 16px;
+  }
 }

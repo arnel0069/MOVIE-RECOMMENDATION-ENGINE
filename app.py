@@ -99,4 +99,4 @@ def index():
 
 @app.route('/video/<filename>')
 def video(filename):
-    return send_from_directory('static/videos', filename)
+    return send_from_directory('static/videos', filename) 
